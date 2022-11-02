@@ -10,7 +10,7 @@ const WooCommerceRestApi = require("@woocommerce/woocommerce-rest-api").default;
 const cloudinary = require('cloudinary');
 
 app.use((req, res, next) => {
-  const allowedOrigins = ['http://localhost:8000', 'https://food-express.onrender.com/'];
+  const allowedOrigins = ['http://localhost:8000', 'https://food-express.onrender.com'];
   const origin = req.headers.origin;
   if (allowedOrigins.includes(origin)) {
        res.setHeader('Access-Control-Allow-Origin', origin);
