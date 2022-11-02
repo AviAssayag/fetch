@@ -126,7 +126,7 @@ app.use((req, res, next) => {
                   type: "simple",
                   status:'publish',
                   reviews_allowed: true,
-                  permalink: 'https://foodmenu.co.il/מסעדה/' + document.querySelector('h1').innerText + '/מנה/' + document.querySelectorAll('.MenuItem-module__name___'+module__name)[f].innerText,
+                  permalink: 'https://restful.co.il/מסעדה/' + document.querySelector('h1').innerText + '/מנה/' + document.querySelectorAll('.MenuItem-module__name___'+module__name)[f].innerText,
                   regular_price: document.querySelectorAll('.MenuItem-module__price___'+module__price)[f].innerText.replace(/[^\d.-]/g, ''),                
                   // "תמונה":document.querySelector(".ImageWithTransition-module__image___2Tqzh").style.backgroundImage.replace('url("', '').replace('")',''),
                   // "מסעדה":document.querySelector('h1').innerText
@@ -148,7 +148,7 @@ app.use((req, res, next) => {
     };
 
     const api = new WooCommerceRestApi({
-      url: "https://foodmenu.co.il",
+      url: "https://restful.co.il",
       consumerKey: 'ck_4ccb70fa08146a01067376bb6e5ecaadc428138d',
       consumerSecret: 'cs_9f9fa79ac2d46cd96377f6604f9bfef79b9d7e11',
       version: "wc/v3"
@@ -157,7 +157,7 @@ app.use((req, res, next) => {
     api._stores = {
 
       get_all_stores: async function () {
-        let url = 'https://foodmenu.co.il/wp-json/wcfmmp/v1/store-vendors'; // all
+        let url = 'https://restful.co.il/wp-json/wcfmmp/v1/store-vendors'; // all
         request.get({
           url: url,
           json: true,
@@ -175,7 +175,7 @@ app.use((req, res, next) => {
       },
 
       get_products: async function (store_id) {
-        let url = 'https://foodmenu.co.il/wp-json/wcfmmp/v1/store-vendors/' + store_id + '/products';      
+        let url = 'https://restful.co.il/wp-json/wcfmmp/v1/store-vendors/' + store_id + '/products';      
         request.get({
           url: url,
           json: true,
@@ -193,7 +193,7 @@ app.use((req, res, next) => {
       },
 
       get: async function (store_id) {
-        let url = 'https://foodmenu.co.il/wp-json/wcfmmp/v1/store-vendors/' + store_id; 
+        let url = 'https://restful.co.il/wp-json/wcfmmp/v1/store-vendors/' + store_id; 
         request.get({
           url: url,
           json: true,
